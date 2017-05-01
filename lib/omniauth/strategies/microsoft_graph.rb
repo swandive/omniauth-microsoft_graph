@@ -39,7 +39,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get(authorize_params.resource + 'v2.0/me').parsed
+        @raw_info ||= access_token.get(authorize_params.resource + 'v1.0/me').parsed
       end
     end
   end
