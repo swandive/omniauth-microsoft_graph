@@ -11,13 +11,13 @@ module OmniAuth
         authorize_url: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
       }
 
-      option :authorize_params, {
-        resource: 'https://graph.microsoft.com/'
-      }
+#       option :authorize_params, {
+#         resource: 'https://graph.microsoft.com/'
+#       }
 
-      option :token_params, {
-        resource: 'https://graph.microsoft.com/'        
-      }
+#       option :token_params, {
+#         resource: 'https://graph.microsoft.com/'        
+#       }
 
       uid { raw_info["id"] }
 
