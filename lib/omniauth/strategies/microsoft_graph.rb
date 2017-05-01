@@ -6,18 +6,18 @@ module OmniAuth
       option :name, :microsoft_graph
 
       option :client_options, {
-        site:          'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
-        token_url:     'https://login.microsoftonline.com/common/oauth2/v2.0/token',
-        authorize_url: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
+        site:          'https://login.microsoftonline.com/common/oauth2/authorize',
+        token_url:     'https://login.microsoftonline.com/common/oauth2/token',
+        authorize_url: 'https://login.microsoftonline.com/common/oauth2/authorize'
       }
 
-#       option :authorize_params, {
-#         resource: 'https://graph.microsoft.com/'
-#       }
+      option :authorize_params, {
+        resource: 'https://graph.microsoft.com/'
+      }
 
-#       option :token_params, {
-#         resource: 'https://graph.microsoft.com/'        
-#       }
+      option :token_params, {
+        resource: 'https://graph.microsoft.com/'        
+      }
 
       uid { raw_info["id"] }
 
@@ -39,7 +39,7 @@ module OmniAuth
       end
 
       def raw_info
-        @raw_info ||= access_token.get(authorize_params.resource + 'v1.0/me').parsed
+        @raw_info ||= access_token.get(authorize_params.resource + 'v2.0/me').parsed
       end
     end
   end
