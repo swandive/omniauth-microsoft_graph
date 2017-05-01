@@ -6,9 +6,9 @@ module OmniAuth
       option :name, :microsoft_graph
 
       option :client_options, {
-        site:          'https://login.microsoftonline.com/common/oauth2/authorize',
-        token_url:     'https://login.microsoftonline.com/common/oauth2/token',
-        authorize_url: 'https://login.microsoftonline.com/common/oauth2/authorize'
+        site:          'https://login.microsoftonline.com/common/oauth2/v2.0/authorize',
+        token_url:     'https://login.microsoftonline.com/common/oauth2/v2.0/token',
+        authorize_url: 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize'
       }
 
       option :authorize_params, {
